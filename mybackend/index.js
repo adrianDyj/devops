@@ -58,7 +58,7 @@ app.get("/cars/:id", (req, res) => {
     redisClient.exists(id, (err, result) => { 
         if (result < 1) {
 
-            redisClient.hgetall(id, (err, redis) => {
+            redisClient.get(id, (err, redis) => {
                 if (err) {
                     console.log(err.stack)
                 } else {
