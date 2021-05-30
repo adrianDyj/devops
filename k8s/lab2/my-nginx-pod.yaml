@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-ngnix-pod2
+  labels:
+    component: web
+    app: my-app
+
+spec:
+  containers:
+    - name: mynodeport
+      image: mynodeport:alpine
+      ports:
+      - containerPort: 80
